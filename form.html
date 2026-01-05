@@ -4,50 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f8;
+        }
+        form{
+            width:400px;
+            margin:40px auto;
+            background: #fff;
+            padding:20px;
+            border-radius:8px;
+        }
+        label{
+            display: block;
+            margin-top: 12px;
+        }
+        input,select,button{
+            width:100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button{
+            margin-top:20px;
+            background:#007bff;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+        button:hover{
+            background:#0053b3;
+        }
+    </style>
 </head>
 <body>
-    <h4>Registration Form</h4>
-    <form action = "/action.php">
-        <input type = "text" placeholder="username">
+    <form>
+        <h2>Student Registration</h2>
+
+        <!--Name-->
+        <label>Full Name</label>
+        <input 
+            type = "text"
+            placeholder = "enter your name"
+            required
+            pattern = "[A-Za-z ]{3,}"
+            title = "only letters , minimum 3 characters">
         <br><br>
-        <input type = "password" placeholder="password">
+
+        <!--Email-->
+        <label>Email</label>
+        <input
+            type = "email"
+            placeholder = "example@gmail.com"
+            required>
         <br><br>
-        <h5>Select your class</h5>
-        <label for="101">
-            <input type = "radio" value="class X" name = "class" id = "101">class X
-        </label>
+        
+        <!--Age-->
+        <label>Age</label>
+        <input
+            type = "number"
+            min = "18"
+            max = "30"
+            required
+            title = "Age must be between 18 and 30">
         <br><br>
-        <label for="102">
-            <input type = "radio" value="class XII" name = "class" id = "102">class XII
-        </label>
-        <br><br> 
-        <h5>Select favourite subjects</h5>
-        <label for = "math">
-            <input type = "checkbox" value = "math" name = "subject" id = "101">Math
-        </label>
-        <br>
-        <label for = "phy">
-            <input type = "checkbox" value = "phy" name = "subject" id = "102">Physics
-        </label>
-        <br>
-        <label for = "math">
-            <input type = "checkbox" value = "chem" name = "subject" id = "103">Chemistry
-        </label>
-        <br>
-        <label for = "math">
-            <input type = "checkbox" value = "cs" name = "subject" id = "104">Computer Science
-        </label>
+
+        <!--phone number-->
+        <label>Phone Number</label>
+        <input
+            type = "text"
+            pattern = "[0-9]{10}"
+            placeholder = "10-digit number"
+            required
+            title = "Enter 10 digit mobile number">
+
         <br><br>
-        <select name = "city">
-            <option value = "Delhi">Delhi</option>
-            <option value = "Hisar">Hisar</option>
-            <option value = "Banglore">Banglore</option>
-            <option value = "Pune">Pune</option>
+
+        <!--course-->
+        <label>Course</label>
+        <select required>
+            <option value = "">Select Course</option>
+            <option>B.tect CSE</option>
+            <option>B.tech IT</option>
+            <option>BCA</option>
+            <option>MCA</option>
         </select>
         <br><br>
-        <textarea name = "feedback" id = "101" placeholder = "please give your feedback" rows = 10></textarea>
-        <br>
-        <input type = "submit" value="submit">
+        <button type = "submit">Register</button>
     </form>
+
 </body>
 </html>
