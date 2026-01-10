@@ -5,17 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traffic Light</title>
     <style>
-        h4{
-            color:rgb(245, 68, 4);
-            text-align:center;
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
         }
-        .rectangle{
-            
+
+        h4 {
+            color: rgb(245, 68, 4);
+            text-align: center;
+        }
+
+        .rectangle {
+            width: 120px;
+            height: 320px;
+            background-color: #222;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .light {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: grey;
+            margin: 0 auto;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
         }
     </style>
 </head>
 <body>
     <h4>Traffic Light</h4>
-    <div class = "rectangle"></div>
+
+    <div class="rectangle">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
 </body>
 </html>
