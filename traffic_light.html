@@ -6,15 +6,18 @@
     <title>Traffic Light</title>
     <style>
         body {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
         }
 
         h4 {
-            color: rgb(245, 68, 4);
+            color: #ffdd57;
+            margin-bottom: 20px;
         }
 
         .rectangle {
@@ -26,6 +29,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
         .light {
@@ -52,19 +56,19 @@
         }
 
         @keyframes redLight {
-            0%, 40% { opacity: 1; box-shadow: 0 0 20px red; }
+            0%, 40% { opacity: 1; box-shadow: 0 0 25px red; }
             41%, 100% { opacity: 0.25; box-shadow: none; }
         }
 
         @keyframes yellowLight {
             0%, 40% { opacity: 0.25; box-shadow: none; }
-            41%, 60% { opacity: 1; box-shadow: 0 0 20px yellow; }
+            41%, 60% { opacity: 1; box-shadow: 0 0 25px yellow; }
             61%, 100% { opacity: 0.25; box-shadow: none; }
         }
 
         @keyframes greenLight {
             0%, 60% { opacity: 0.25; box-shadow: none; }
-            61%, 100% { opacity: 1; box-shadow: 0 0 20px limegreen; }
+            61%, 100% { opacity: 1; box-shadow: 0 0 25px limegreen; }
         }
     </style>
 </head>
