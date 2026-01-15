@@ -20,6 +20,12 @@
             margin-bottom: 20px;
         }
 
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .rectangle {
             width: 130px;
             height: 340px;
@@ -37,7 +43,19 @@
             height: 90px;
             border-radius: 50%;
             opacity: 0.25;
+            position: relative;
             transition: opacity 0.5s, box-shadow 0.5s;
+        }
+
+        .light::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 18px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
         }
 
         .red {
@@ -55,20 +73,33 @@
             animation: greenLight 9s infinite;
         }
 
+        .pole {
+            width: 18px;
+            height: 120px;
+            background: #333;
+        }
+
+        .base {
+            width: 80px;
+            height: 20px;
+            background: #222;
+            border-radius: 10px;
+        }
+
         @keyframes redLight {
-            0%, 40% { opacity: 1; box-shadow: 0 0 25px red; }
+            0%, 40% { opacity: 1; box-shadow: 0 0 30px red; }
             41%, 100% { opacity: 0.25; box-shadow: none; }
         }
 
         @keyframes yellowLight {
             0%, 40% { opacity: 0.25; box-shadow: none; }
-            41%, 60% { opacity: 1; box-shadow: 0 0 25px yellow; }
+            41%, 60% { opacity: 1; box-shadow: 0 0 30px yellow; }
             61%, 100% { opacity: 0.25; box-shadow: none; }
         }
 
         @keyframes greenLight {
             0%, 60% { opacity: 0.25; box-shadow: none; }
-            61%, 100% { opacity: 1; box-shadow: 0 0 25px limegreen; }
+            61%, 100% { opacity: 1; box-shadow: 0 0 30px limegreen; }
         }
     </style>
 </head>
@@ -76,10 +107,14 @@
 
 <h4>Traffic Light</h4>
 
-<div class="rectangle">
-    <div class="light red"></div>
-    <div class="light yellow"></div>
-    <div class="light green"></div>
+<div class="wrapper">
+    <div class="rectangle">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
+    <div class="pole"></div>
+    <div class="base"></div>
 </div>
 
 </body>
